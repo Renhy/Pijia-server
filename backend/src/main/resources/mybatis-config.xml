@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+  <!-- See http://mybatis.github.io/mybatis-3/configuration.html#settings -->
+  <settings>
+    <setting name="mapUnderscoreToCamelCase" value="true" />
+    <setting name="lazyLoadingEnabled" value="true" />
+  </settings>
+
+  <!-- See http://www.mybatis.org/mybatis-3/configuration.html#typeAliases -->
+  <!-- 扫描指定包下面的类，如果不指定 @Alias， 则会取 model 类名 小写作为 别名 -->
+  <typeAliases>
+    <package name="com.renhy.home.model" />
+  </typeAliases>
+
+  <plugins>
+    <plugin interceptor="com.renhy.home.config.PageWithPageSizeLimitInterceptor">
+      <property name="autoRuntimeDialect" value="true"/>
+      <property name="reasonable" value="true"/>
+      <property name="supportMethodsArguments" value="true"/>
+      <property name="rowBoundsWithCount" value="true"/>
+      <property name="pageSizeZero" value="true"/>
+      <!--自定义PageInterceptor参数，pageSize最大值限制，超过最大值时按最大值查询-->
+      <property name="pageSizeMaxValue" value="200"/>
+    </plugin>
+  </plugins>
+
+</configuration>
