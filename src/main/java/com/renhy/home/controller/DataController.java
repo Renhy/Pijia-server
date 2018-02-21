@@ -20,6 +20,9 @@ public class DataController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public boolean postDeviceData(@RequestBody DeviceData data) {
+        if (data.getTimestamp() == null) {
+            data.setTimestamp(System.currentTimeMillis());
+        }
 
         log.info("received data: {}", data.toString());
         return true;
