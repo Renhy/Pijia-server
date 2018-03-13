@@ -10,12 +10,6 @@
     <setting name="lazyLoadingEnabled" value="true" />
   </settings>
 
-  <!-- See http://www.mybatis.org/mybatis-3/configuration.html#typeAliases -->
-  <!-- 扫描指定包下面的类，如果不指定 @Alias， 则会取 model 类名 小写作为 别名 -->
-  <typeAliases>
-    <package name="com.renhy.home.model" />
-  </typeAliases>
-
   <plugins>
     <plugin interceptor="com.renhy.home.config.PageWithPageSizeLimitInterceptor">
       <property name="autoRuntimeDialect" value="true"/>

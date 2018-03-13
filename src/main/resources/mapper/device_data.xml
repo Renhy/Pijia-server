@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.renhy.home.dao.DeviceDataDao">
-
-  <resultMap type="com.renhy.home.model.DeviceData" id="devoceMapResult">
-    <id column="id" property="id" />
-    <result column="device" property="device" />
-    <result column="type" property="type" />
-    <result column="content" property="content" />
-    <result column="timestamp" property="timestamp" />
-  </resultMap>
+<mapper namespace="com.renhy.home.dao.DeviceDao">
 
   <sql id="tableFields">
     id, device, type, content , timestamp
@@ -16,7 +8,7 @@
 
   <insert id="saveData">
     INSERT INTO
-    sys.role (device, type, content, timestamp)
+    sys.data (device, type, content, timestamp)
     VALUES
     (#{device}, #{type}, #{content}, #{timestamp})
   </insert>

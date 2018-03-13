@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 /**
  * Mybatis Configuration
  */
-@Configuration
+//@Configuration
 public class MybatisConfig {
 
     private static final String MYBATIS_CONFIG_PATH = "classpath:mybatis-config.xml";

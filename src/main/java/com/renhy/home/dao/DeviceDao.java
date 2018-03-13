@@ -8,7 +8,7 @@ import com.renhy.home.model.DeviceData;
  * Device Data Dao
  */
 @Mapper
-public interface DeviceDataDao {
+public interface DeviceDao {
 
     int saveData(DeviceData data);
 
