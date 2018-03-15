@@ -9,6 +9,7 @@ spring:
       username: "${DATABASE_USERNAME:postgres}"
       password: "${DATABASE_PASSWORD:postgres}"
       driver-class-name: "${DATABASE_DRIVER:org.postgresql.Driver}"
+      type: com.alibaba.druid.pool.DruidDataSource
 
 mybatis:
   config-location: classpath:mybatis-config.xml
