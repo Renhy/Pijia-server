@@ -3,12 +3,12 @@
 <mapper namespace="com.renhy.home.dao.DeviceDao">
 
   <sql id="tableFields">
-    id, device, type, content , timestamp
+    id, device, type, content, ts
   </sql>
 
   <insert id="saveData">
     INSERT INTO
-    sys.data (device, type, content, timestamp)
+    pijia.device_data (device, type, content, ts)
     VALUES
     (#{device}, #{type}, #{content}, #{timestamp})
   </insert>

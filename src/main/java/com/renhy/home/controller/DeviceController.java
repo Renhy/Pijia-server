@@ -1,5 +1,7 @@
 package com.renhy.home.controller;
 
+import java.util.Date;
+
 import com.renhy.home.model.DeviceData;
 import com.renhy.home.service.DeviceService;
 import lombok.extern.slf4j.Slf4j;
@@ -23,7 +25,7 @@ public class DeviceController {
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public boolean postDeviceData(@RequestBody DeviceData data) {
         if (data.getTimestamp() == null) {
-            data.setTimestamp(System.currentTimeMillis());
+            data.setTimestamp(new Date());
         }
         log.info("received data: {}", data.toString());
         return deviceService.saveDeviceData(data) > 0;
