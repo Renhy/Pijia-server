@@ -10,6 +10,10 @@
     <setting name="lazyLoadingEnabled" value="true" />
   </settings>
 
+  <typeAliases>
+    <package name="com.renhy.home.model"/>
+  </typeAliases>
+
   <plugins>
     <plugin interceptor="com.renhy.home.config.PageWithPageSizeLimitInterceptor">
       <property name="autoRuntimeDialect" value="true"/>

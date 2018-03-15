@@ -10,7 +10,34 @@
     INSERT INTO
     pijia.device_data (device, type, content, ts)
     VALUES
-    (#{device}, #{type}, #{content}, #{timestamp})
+    (#{device}, #{type}, #{content}, #{ts})
   </insert>
+
+  <select id="getLatest" resultType="devicedata">
+    SELECT
+      id, device, type, content, ts
+    FROM
+      pijia.device_data
+    ORDER BY ts DESC
+    LIMIT 1
+  </select>
+
+  <select id="list" resultType="devicedata">
+    SELECT
+      id, device, type, content, ts
+    FROM
+      pijia.device_data
+    <where>
+      <if test="device != null">
+        device = #{device}
+      </if>
+      <if test="start != null">
+        AND ts <![CDATA[ >= ]]> #{start}
+      </if>
+      <if test="end != null">
+        AND ts <![CDATA[ <= ]]> #{end}
+      </if>
+    </where>
+  </select>
 
 </mapper>

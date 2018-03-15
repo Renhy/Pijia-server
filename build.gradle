@@ -51,6 +51,7 @@ dependencies {
 	compile "org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisVersion}"
 	compile "com.github.pagehelper:pagehelper:${pagehelperVersion}"
 	compileOnly "org.projectlombok:lombok:${lombokVersion}"
+	annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"
 
 	compile "org.springframework.boot:spring-boot-starter"
 	compile "org.springframework.boot:spring-boot-starter-web"

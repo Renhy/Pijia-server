@@ -16,6 +16,6 @@ public class DeviceData {
     private String device;
     private String type;
     private String content;
-    private Date timestamp;
+    private Date ts;
 
 }
