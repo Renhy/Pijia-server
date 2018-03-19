@@ -4,6 +4,18 @@ system:
 
 
 spring:
+  mvc:
+      # spring CORS configuration
+      cors:
+        mappings:
+          # Intercept path
+           "/api/**":
+                       allowed-origins: "*"
+                       allowed-methods: "*"
+                       allowed-headers: "*"
+                       max-age: "1800"
+                       allow-credentials: "true"
+
   datasource:
       url: "${DATABASE_URL:jdbc:postgresql://101.200.48.242:5432/db}"
       username: "${DATABASE_USERNAME:postgres}"
