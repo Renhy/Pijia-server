@@ -3,6 +3,7 @@ package com.renhy.home.service;
 import java.util.Date;
 import java.util.List;
 
+import com.github.pagehelper.PageInfo;
 import com.renhy.home.model.DeviceData;
 
 /**
@@ -14,6 +15,6 @@ public interface DeviceService {
 
     DeviceData getLatest(String device);
 
-    List<DeviceData> list(String device, Date start, Date end, int pageSize, int pageNum);
+    PageInfo<DeviceData> list(String device, Date start, Date end, int pageSize, int pageNum);
 
 }

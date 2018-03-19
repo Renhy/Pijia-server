@@ -38,6 +38,7 @@
         AND ts <![CDATA[ <= ]]> #{end}
       </if>
     </where>
+    ORDER BY ts DESC
   </select>
 
 </mapper>
