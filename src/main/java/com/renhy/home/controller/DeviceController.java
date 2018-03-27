@@ -3,6 +3,8 @@ package com.renhy.home.controller;
 import java.util.Date;
 import java.util.List;
 
+import com.github.pagehelper.PageInfo;
+import com.github.pagehelper.PageInterceptor;
 import com.renhy.home.model.DeviceData;
 import com.renhy.home.service.DeviceService;
 import lombok.extern.slf4j.Slf4j;
@@ -39,7 +41,7 @@ public class DeviceController {
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public List<DeviceData> list(
+    public PageInfo<DeviceData> list(
         @RequestParam(value = "device", required = false) String device,
         @RequestParam(value = "start", required = false) Long start,
         @RequestParam(value = "end", required = false) Long end,
@@ -54,7 +56,7 @@ public class DeviceController {
             e = new Date(end);
         }
 
-        return deviceService.list(device, s, e, pageSize, pageNum);
+        return new PageInfo<>(deviceService.list(device, s, e, pageSize, pageNum));
     }
 
 

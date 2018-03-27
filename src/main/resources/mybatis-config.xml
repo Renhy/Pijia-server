@@ -14,16 +14,4 @@
     <package name="com.renhy.home.model"/>
   </typeAliases>
 
-  <plugins>
-    <plugin interceptor="com.renhy.home.config.PageWithPageSizeLimitInterceptor">
-      <property name="autoRuntimeDialect" value="true"/>
-      <property name="reasonable" value="true"/>
-      <property name="supportMethodsArguments" value="true"/>
-      <property name="rowBoundsWithCount" value="true"/>
-      <property name="pageSizeZero" value="true"/>
-      <!--自定义PageInterceptor参数，pageSize最大值限制，超过最大值时按最大值查询-->
-      <property name="pageSizeMaxValue" value="200"/>
-    </plugin>
-  </plugins>
-
 </configuration>
