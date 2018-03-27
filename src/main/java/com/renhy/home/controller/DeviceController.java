@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.github.pagehelper.PageInfo;
-import com.github.pagehelper.PageInterceptor;
 import com.renhy.home.model.DeviceData;
 import com.renhy.home.service.DeviceService;
 import lombok.extern.slf4j.Slf4j;
@@ -56,7 +55,7 @@ public class DeviceController {
             e = new Date(end);
         }
 
-        return new PageInfo<>(deviceService.list(device, s, e, pageSize, pageNum));
+        return deviceService.list(device, s, e, pageSize, pageNum);
     }
 
 
