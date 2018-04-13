@@ -1,3 +1,10 @@
+CREATE TABLE pijia.device (
+  id          BIGSERIAL   NOT NULL PRIMARY KEY,
+  name        VARCHAR(32) NOT NULL,
+  type        VARCHAR(32) NOT NULL,
+  location    VARCHAR(32)
+);
+
 CREATE TABLE pijia.device_data (
   id          BIGSERIAL   NOT NULL PRIMARY KEY,
   device      VARCHAR(32) NOT NULL,

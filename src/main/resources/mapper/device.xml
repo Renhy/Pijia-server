@@ -2,9 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.renhy.home.dao.DeviceDao">
 
-  <sql id="tableFields">
-    id, device, type, content, ts
-  </sql>
+  <select id="findDevcieByName" resultType="device">
+    SELECT
+      id, name, type, location
+    FROM
+      pijia.device
+    WHERE
+      name = #{name}
+  </select>
+
+  <select id="listDevice" resultType="device">
+    SELECT
+    id, name, type, location
+    FROM
+    pijia.device
+  </select>
 
   <insert id="saveData">
     INSERT INTO
@@ -22,7 +34,7 @@
     LIMIT 1
   </select>
 
-  <select id="list" resultType="devicedata">
+  <select id="listData" resultType="devicedata">
     SELECT
       id, device, type, content, ts
     FROM
@@ -40,5 +52,8 @@
     </where>
     ORDER BY ts DESC
   </select>
+
+
+
 
 </mapper>

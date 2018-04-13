@@ -1,7 +1,6 @@
 package com.renhy.home.controller;
 
 import java.util.Date;
-import java.util.List;
 
 import com.github.pagehelper.PageInfo;
 import com.renhy.home.model.DeviceData;
@@ -55,7 +54,7 @@ public class DeviceController {
             e = new Date(end);
         }
 
-        return deviceService.list(device, s, e, pageSize, pageNum);
+        return deviceService.listData(device, s, e, pageSize, pageNum);
     }
 
 
