@@ -13,7 +13,7 @@
     (#{device}, #{ts}, #{tem}, #{hum}, #{ch2o}, #{tvoc}, #{co2}, #{pm10}, #{pm25})
   </insert>
 
-  <select id="getLatest" resultType="devicedata">
+  <select id="getLatest" resultType="aqodata">
     SELECT
     <include refid="tableFields"/>
     FROM
